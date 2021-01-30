@@ -83,19 +83,10 @@ const app = Sammy('#main', function () {
         DB.collection("teams").get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    console.log(`${doc.id} => ${doc.data()}`);
-                    const {
-                        name,
-                        comment
-                    } = doc.data();
+                    const { name, comment } = doc.data();
 
-                    const team = {
-                        name: name,
-                        comment: comment,
-                        _id: doc.id
-                    }
+                    const team = { name, comment, _id: doc.id }
                     this.teams.push(team)
-                    console.log(this.teams);
                 });
 
                 if (userInfo) {
@@ -172,21 +163,12 @@ const app = Sammy('#main', function () {
     });
 
     this.post('/login', function () {
-        const {
-            email,
-            password
-        } = this.params;
+        const {email, password } = this.params;
 
         userModel.signInWithEmailAndPassword(email, password)
             .then(loginInfo => {
-                const {
-                    uid,
-                    email
-                } = loginInfo.user;
-                localStorage.setItem('userInfo', JSON.stringify({
-                    uid,
-                    email
-                }));
+                const {uid, email} = loginInfo.user;
+                localStorage.setItem('userInfo', JSON.stringify({uid, email}));
                 this.redirect('/home');
             })
             .catch(err => {
@@ -199,7 +181,6 @@ const app = Sammy('#main', function () {
     });
 
     this.post('/create-team', function () {
-        debugger
         this.teams = [];
         const {
             name,

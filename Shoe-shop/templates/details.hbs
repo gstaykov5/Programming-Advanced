@@ -1,0 +1,23 @@
+{{> header}}
+<div class="offer-details">
+    <h1>{{offer.nameModel}}</h1>
+    <div class="info">
+        <h1>no info</h1>
+        <img src="{{offer.imgUrl}}"
+            alt="">
+        <div class="description">{{offer.description}}
+            <br>
+            <br>
+            <p class="price">${{offer.price}}</p>
+        </div>
+    </div>
+    <div class="actions">
+        {{#if isSeller}}
+        <a>Edit</a>
+        <a>Delete</a>
+        {{/if}}
+        <a>Buy</a>
+        <span>You bought it</span>
+    </div>
+</div>
+{{> footer}}
