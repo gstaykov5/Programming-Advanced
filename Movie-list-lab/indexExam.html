@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Application 2020</title>
+    <link rel="icon" type="image/png" href="../static/favicon.ico">
+    <link href="../static/css/site.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <section class="notifications" style="display: none;">
+        <p class="notification-message" id="errorBox"></p>
+    </section>
+    <section class="notifications" style="display: none;background-color:rgba(1, 131, 29, 0.541);">
+        <p class="notification-message" id="successBox"></p>
+    </section>
+
+    
+    <div class="container" id="container"></div>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyD-TpKLwj5zG1d6oxOO9Wo3JQRZRCAF30k",
+            authDomain: "movie-list-7f192.firebaseapp.com",
+            projectId: "movie-list-7f192",
+            storageBucket: "movie-list-7f192.appspot.com",
+            messagingSenderId: "740525920415",
+            appId: "1:740525920415:web:0fbc60eab643701c8d12aa"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="./node_modules/sammy/lib/sammy.js"></script>
+    <script src="./node_modules/sammy/lib/plugins/sammy.handlebars.js"></script>
+    
+    <script src="/app.js"></script>
+</body>
+</html>

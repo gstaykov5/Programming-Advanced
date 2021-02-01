@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <a class="navbar-brand text-light" href="/home">Movies</a>
+    <ul class="navbar-nav ml-auto ">
+        {{#if loggedIn}}
+        <li class="nav-item">
+            <a class="nav-link">Welcome, {{this.email}}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+        </li>
+    </ul>
+    {{/if}}
+</nav>
+<div class="jumbotron jumbotron-fluid text-light" style="background-color: #343a40;">
+    <img src="https://s.studiobinder.com/wp-content/uploads/2019/06/Best-M-Night-Shyamalan-Movies-and-Directing-Style-StudioBinder.jpg"
+        class="img-fluid" alt="Responsive image">
+    <h1 class="display-4">Movies</h1>
+    <p class="lead">Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.</p>
+</div>
